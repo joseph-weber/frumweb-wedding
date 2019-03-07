@@ -16,14 +16,14 @@ Vue.component('nav-bar', {
     }
   },
   template: `<div id="navigation-bar">
-              <div><p v-on:click="pageChange('home')" id="nav-p">Home</p></div>
-              <p>|</p>
-              <div><p v-on:click="pageChange('schedule')" id="nav-p">Schedule</p></div>
-              <p>|</p>
-              <div><p v-on:click="pageChange('photos')" id="nav-p">Photos</p></div>
-              <p>|</p>
-              <div><p v-on:click="pageChange('destination')" id="nav-p">Destination</p></div>
-              <p>|</p>
-              <div><p v-on:click="registry()" id="nav-p">Registry</p></div>
+              <div><p v-on:click="pageChange('home')" class="nav-p">Home</p></div>
+              <p class="nav-p">|</p>
+              <div><p v-on:click="pageChange('schedule')" class="nav-p">Schedule</p></div>
+              <p class="nav-p">|</p>
+              <div><p v-on:click="pageChange('photos')" class="nav-p">Photos</p></div>
+              <p class="nav-p">|</p>
+              <div><p v-on:click="pageChange('destination')" class="nav-p">Destination</p></div>
+              <p class="nav-p">|</p>
+              <div><p v-on:click="registry()" class="nav-p">Registry</p></div>
             </div>`,
 });
