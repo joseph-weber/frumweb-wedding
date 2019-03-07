@@ -32,6 +32,10 @@ $(function () { if ($('#app').length) {
     template: `<div>
                 <my-header></my-header>
                 <nav-bar></nav-bar>
+                <div id="wedding-party">
+                  <groomsmen></groomsmen>
+                  <bridesmaids></bridesmaids>
+                </div>
               </div>`
   })
 }});
