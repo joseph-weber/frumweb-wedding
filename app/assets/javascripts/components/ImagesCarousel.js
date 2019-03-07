@@ -6,7 +6,7 @@ Vue.component('images-carousel', {
       count: 0
     }
   },
-  template: `<div>
+  template: `<div id="carousel">
               <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -14,6 +14,27 @@ Vue.component('images-carousel', {
                   </div>
                   <div class="carousel-item">
                     <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://buzzsharer.com/wp-content/uploads/2016/03/Pomeranian-x-Bichon-Frise.jpg" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
                   </div>
                   <div class="carousel-item">
                     <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
