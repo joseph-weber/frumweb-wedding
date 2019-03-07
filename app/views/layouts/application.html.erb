@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wedding</title>
+    <% vue_route = Rails.env == 'production' ? "lib/vuemin" : "lib/vue" %>
+    <%= javascript_include_tag vue_route %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta charset="utf-8" >
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>
