@@ -127,6 +127,7 @@ body {
   margin: 10px auto;
   display: block;
 }
+
 #venue-pic {
   width: 60%;
   height: auto;
@@ -160,6 +161,13 @@ body {
   margin: 10px 10px;
 }
 
+#blaire-img {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
 
 .avatar {
   height: 7rem;
@@ -195,10 +203,6 @@ body {
   font-size: 55px;
   color: #2a3439;
 }
-
-
-
-
 
 #my-footer {
   text-align: center;
