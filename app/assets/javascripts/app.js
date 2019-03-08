@@ -49,8 +49,11 @@ $(function () { if ($('#app').length) {
       }
     },
     template: `<div>
-                <my-header></my-header>
-                <nav-bar></nav-bar>
+                <div class="sticky">
+                  <my-header></my-header>
+                  <nav-bar></nav-bar>
+                </div>
+                <div class="content">
                 <img v-show="page == 'home'" id="the-couple" src="/assets/the_couple.jpg"/>
                 <p v-show="page == 'home'" id="lorem">Tempor est ad veniam officia adipisicing cupidatat. Officia occaecat aute excepteur pariatur eiusmod sint culpa ullamco commodo exercitation est ad id anim. Consectetur aute ea esse et non. Esse id eu quis exercitation dolor do eiusmod. Non ipsum sunt pariatur cillum eiusmod Lorem. Voluptate elit do nisi sit deserunt Lorem elit qui cupidatat.</p>
                 <destination v-show="page == 'destination'"></destination>
@@ -60,7 +63,23 @@ $(function () { if ($('#app').length) {
                 </div>
                 <schedule v-show="page == 'schedule'" />
                 <images-carousel v-show="page == 'photos'"></images-carousel>
+                <registry v-show="page == 'registry'"></registry>
+                <accomodations v-show="page == 'accomodations'"></accomodations>
                 <my-footer></my-footer>
+                </div>
               </div>`
   })
 }});
+
+
+var headerHeight = 350;
+
+$(window).bind('scroll', function () {
+if ($(window).scrollTop() > headerHeight) {
+    $('#navigation-bar').removeClass('navbar-top');
+    $('#navigation-bar').addClass('navbar-fixed-top');
+} else {
+    $('#navigation-bar').removeClass('navbar-fixed-top');
+    $('#navigation-bar').addClass('navbar-top');
+}
+});  
