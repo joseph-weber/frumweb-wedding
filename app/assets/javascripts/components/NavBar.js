@@ -15,7 +15,7 @@ Vue.component('nav-bar', {
       location.replace('http://bloomingdales.com');
     }
   },
-  template: `<div id="navigation-bar">
+  template: `<div id="navigation-bar" class="navbar navbar-default navbar-top topnav" role="navigation">
               <div><p v-on:click="pageChange('home')" class="nav-p">Home</p></div>
               <p class="nav-p">|</p>
               <div><p v-on:click="pageChange('schedule')" class="nav-p">Schedule</p></div>
@@ -24,6 +24,8 @@ Vue.component('nav-bar', {
               <p class="nav-p">|</p>
               <div><p v-on:click="pageChange('destination')" class="nav-p">Destination</p></div>
               <p class="nav-p">|</p>
-              <div><p v-on:click="registry()" class="nav-p">Registry</p></div>
+              <div><p v-on:click="pageChange('registry')"  class="nav-p">Registry</p></div>
+              <p class="nav-p">|</p>
+              <div><p v-on:click="pageChange('accomodations')"  class="nav-p">Accomodations</p></div>
             </div>`,
 });
