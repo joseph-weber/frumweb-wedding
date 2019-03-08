@@ -17,7 +17,7 @@ Vue.component('bridesmaids', {
               <div class="card" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">Bridesmaid</h5>
-                  <img class="avatar" src="https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1"/>
+                  <img id="blaire-img" class="avatar" src="./assets/blair.jpg"/>
                   <p class="card-text">Blaire</p>
                 </div>
               </div>
