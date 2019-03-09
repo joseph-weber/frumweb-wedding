@@ -59,7 +59,7 @@ $(function () { if ($('#app').length) {
                 <destination v-show="page == 'destination'"></destination>
                 <div id="wedding-party">
                   <groomsmen v-show="page == 'home'"></groomsmen>
-                  <bridesmaids v-show="page == 'home'"></bridesmaids>
+                  <bridesmaiden v-show="page == 'home'"></bridesmaiden>
                 </div>
                 <schedule v-show="page == 'schedule'" />
                 <images-carousel v-show="page == 'photos'"></images-carousel>
