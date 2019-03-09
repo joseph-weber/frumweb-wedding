@@ -169,10 +169,25 @@ body {
   transform: rotate(90deg);
 }
 
+.card {
+  margin-bottom: 20px;
+}
+
+.card-body {
+  overflow: hidden;
+}
+
 .avatar {
   height: 7rem;
   width: 7rem;
   border-radius: 7rem;
+}
+
+.large-card {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin: 20px auto;
+  width: 60%;
 }
 
 #carousel {
@@ -195,13 +210,13 @@ body {
 {
   content: '>';
   font-size: 55px;
-  color: #2a3439;
+  color: snow;
 }
 
 .carousel-control-prev-icon:after {
   content: '<';
   font-size: 55px;
-  color: #2a3439;
+  color: snow;
 }
 
 #my-footer {
@@ -223,4 +238,38 @@ body {
 .pac {
   font-family: 'Quicksand';
   text-align: center;
+}
+
+.title {
+  font-family: 'Pacifico';
+  text-align: center;
+}
+
+.event {
+  margin: 10px 0 10px 0;
+}
+
+.d-block {
+  width: 90rem;
+  height: 70rem;
+  border: 20px solid black;
+}
+
+.registry{
+  margin: 5rem auto 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.registry-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.registry-img {
+  max-height: 14rem;
+  max-width: 50%;
+  margin: 0 auto;
 }
