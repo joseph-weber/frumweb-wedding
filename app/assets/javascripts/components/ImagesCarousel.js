@@ -3,41 +3,26 @@
 Vue.component('images-carousel', {
   data: function () {
     return {
-      count: 0
+      items: [
+        './assets/new_years.png',
+        './assets/bulldog.jpg',
+        './assets/rowdies.jpg',
+        './assets/the_couple.jpg',
+        './assets/toledo.jpg',
+        './assets/mahaffey.jpg',
+        './assets/boys.jpg'
+      ]
     }
   },
   template: `<div id="carousel">
+              <h1 class="title">Images</h1>
               <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="First slide">
+                    <img class="d-block w-100" src="./assets/cien.jpg" alt="First slide">
                   </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Second slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://buzzsharer.com/wp-content/uploads/2016/03/Pomeranian-x-Bichon-Frise.jpg" alt="Third slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/51ys%2BqODSgL.jpg" alt="Third slide">
+                  <div v-for="(item, index) in items" class="carousel-item">
+                    <img class="d-block w-100" :src="item" alt="Second slide">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
