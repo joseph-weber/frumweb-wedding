@@ -1,24 +1,77 @@
 "use strict";
 
 Vue.component('schedule', {
+  data: function () {
+    return {
+      items: [
+        {
+          date: 'Friday January 17',
+          events: 
+            [
+              {
+                time: '8 pm',
+                event: 'Out of Town Guest Party',
+                where: 'Intermezzo Coffee & Cocktail Bar',
+                address: '655 2nd Ave S. St. Petersburg, FL'
+              }
+            ] 
+        },
+        {
+          date: 'Saturday January 18',
+          events: 
+            [
+              {
+                time: '5:30pm',
+                event: 'Galleries Open for Guests',
+                where: 'James Museum',
+                address: '150 Central Ave, St. Petersburg, FL'
+              },
+              {
+                time: '6:30 pm',
+                event: 'Wedding Reception',
+                where: 'James Museum',
+                address: '150 Central Ave, St. Petersburg, FL'
+              },
+              {
+                time: '7:15 pm',
+                event: 'Wedding Reception',
+                where: 'James Museum',
+                address: '150 Central Ave, St. Petersburg, FL'
+              },
+              {
+                time: '8 pm',
+                event: 'After Party',
+                where: 'Che @ Ceviche Tapas',
+                address: 'Address for Ceviche'
+              }
+            ]
+        },
+        {
+          date: 'Sunday January 19',
+          events: 
+            [
+              {
+                time: '11 am',
+                event: 'Brunch',
+                where: 'Somewhere',
+                address: 'Some Address'
+              }
+            ]
+        }
+      ]
+    }
+  },
   template: `<div id="schedule-div">
+              <h1 class="title">Schedule</h1>
               <img id="venue-pic" src="/assets/wedding_invite.jpg" />
-              <h1 class="pac">Friday January 17</h1>
-              <h3 class="pac">Rehearsal Dinner</h3>
-              <p class="pac">6 pm</p>
-              <p class="pac">Where: Rococo Steakhouse</p>
-              <p class="pac">655 2nd Ave S. St. Petersburg, FL</p>
-              <p class="pac">Who: Wedding Party, direct family & aunts and uncles</p>
-              <h3 class="pac">Out of Town Guest Reception</h3>
-              <p class="pac">8 pm</p>
-              <p class="pac">Where: Intermezzo Coffee and Cocktail Bar</p>
-              <p class="pac">1111 Central Ave, St. Petersburg, FL</p>
-              <p class="pac">Who: All Guests</p>
-              <h1 class="pac">Saturday January 18</h1>
-              <h3 class="pac">Wedding Ceremony</h3>
-              <p class="pac">6:30 pm</p>
-              <p class="pac">Where: The James Museum</p>
-              <p class="pac">150 Central Ave, St. Petersburg, FL </p>
-              <p class="pac">Who: All Guests</p>
+              <div class="card w-60 large-card" v-for="item in items">
+                <h1 class="pac">{{item.date}}</h1>
+                <div class="event" v-for="event in item.events">
+                  <h2 class="pac">{{event.event}}</h2>
+                  <p class="pac">Time: {{event.time}}</p>
+                  <p class="pac">Where: {{event.where}}</p>
+                  <p class="pac">Address: {{event.address}}</p>
+                </div>
+              </div>
             </div>`,
 });
