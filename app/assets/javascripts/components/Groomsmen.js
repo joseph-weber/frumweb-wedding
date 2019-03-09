@@ -3,50 +3,46 @@
 Vue.component('groomsmen', {
   data: function () {
     return {
-      count: 0
+      items: [
+        {
+          image: './assets/david.jpg',
+          role: 'Best Man',
+          name: 'David Weber'
+        },
+        {
+          image: "https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1",
+          role: 'Groomsman',
+          name: 'Rob Weber'
+        },
+        {
+          image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
+          role: 'Groomsman',
+          name: 'John van Fechtmann'
+        },
+        {
+          image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
+          role: 'Groomsman',
+          name: 'Phil Rimmler'
+        },
+        {
+          image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
+          role: 'Groomsman',
+          name: 'Zach Frumkin'
+        },
+        {
+          image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
+          role: 'Groomsman',
+          name: 'Zubair Ravat'
+        }
+      ]
     }
   },
   template: `<div class="wedding-party">
-              <div class="card" style="width: 18rem;">
+              <div v-for="item in items" class="card" style="width: 18rem;">
                 <div class="card-body">
-                  <h5 class="card-title">Best Man</h5>
-                  <img class="avatar" src="http://mousebreath.com/wp-content/uploads/2011/11/Puss-in-boots-thumb.jpg"/>
-                  <p class="card-text">David Weber</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                  <h5 class="card-title">Groomsman</h5>
-                  <img class="avatar" src="http://mousebreath.com/wp-content/uploads/2011/11/Puss-in-boots-thumb.jpg"/>
-                  <p class="card-text">Rob</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Groomsman</h5>
-                  <img class="avatar" src="http://mousebreath.com/wp-content/uploads/2011/11/Puss-in-boots-thumb.jpg"/>
-                  <p class="card-text">John</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Groomsman</h5>
-                  <img class="avatar" src="http://mousebreath.com/wp-content/uploads/2011/11/Puss-in-boots-thumb.jpg"/>
-                  <p class="card-text">Phil</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Groomsman</h5>
-                  <img class="avatar" src="http://mousebreath.com/wp-content/uploads/2011/11/Puss-in-boots-thumb.jpg"/>
-                  <p class="card-text">Zubair</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Groomsman</h5>
-                  <img class="avatar" src="http://mousebreath.com/wp-content/uploads/2011/11/Puss-in-boots-thumb.jpg"/>
-                  <p class="card-text">Zach</p>
+                  <h5 class="card-title">{{item.role}}</h5>
+                  <img class="avatar" :src="item.image" />
+                  <p class="card-text">{{item.name}}</p>
                 </div>
               </div>
             </div>`
