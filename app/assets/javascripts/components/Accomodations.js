@@ -2,6 +2,6 @@
 
 Vue.component('accomodations', {
   template: `<div id="accomodations-div">
-              <h1>Locations</h1>
+              <h1 class="title">Accomodations</h1>
             </div>`,
 });
