@@ -1,52 +1,48 @@
 "use strict";
 
-Vue.component('bridesmaids', {
+Vue.component('bridesmaiden', {
   data: function () {
     return {
-      count: 0
+      items: [
+        {
+          image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
+          role: 'Matron of Honour',
+          name: 'Kim Frumkin'
+        },
+        {
+          image: "./assets/blair.jpg",
+          role: 'Bridesmaid',
+          name: 'Blaire Abbey'
+        },
+        {
+          image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
+          role: 'Bridesmaid',
+          name: 'Erica Benstock'
+        },
+        {
+          image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
+          role: 'Bridesmaid',
+          name: 'Lizzie McLain'
+        },
+        {
+          image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
+          role: 'Bridesmaid',
+          name: 'Mary Weber'
+        },
+        {
+          image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
+          role: 'Bridesmaid',
+          name: 'Samantha Weber'
+        }
+      ]
     }
   },
   template: `<div class="wedding-party">
-              <div class="card" style="width: 18rem;">
+              <div v-for="item in items" class="card" style="width: 18rem;">
                 <div class="card-body">
-                  <h5 class="card-title">Matron of Honour</h5>
-                  <img class="avatar" src="https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1"/>
-                  <p class="card-text">Kim Frumkin</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Bridesmaid</h5>
-                  <img id="blaire-img" class="avatar" src="./assets/blair.jpg"/>
-                  <p class="card-text">Blaire</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Bridesmaid</h5>
-                  <img class="avatar" src="https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1"/>
-                  <p class="card-text">Erica</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Bridesmaid</h5>
-                  <img class="avatar" src="https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1"/>
-                  <p class="card-text">Lizzie</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Bridesmaid</h5>
-                  <img class="avatar" src="https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1"/>
-                  <p class="card-text">Mary</p>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Bridesmaid</h5>
-                  <img class="avatar" src="https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1"/>
-                  <p class="card-text">Samantha</p>
+                  <h5 class="card-title">{{item.role}}</h5>
+                  <img class="avatar" :src="item.image" />
+                  <p class="card-text">{{item.name}}</p>
                 </div>
               </div>
             </div>`
