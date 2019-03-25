@@ -12,7 +12,8 @@ Vue.component('bridesmaiden', {
         {
           image: "./assets/blair.jpg",
           role: 'Bridesmaid',
-          name: 'Blaire Abbey'
+          name: 'Blaire Abbey',
+          id: 'blaire'
         },
         {
           image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
@@ -41,7 +42,8 @@ Vue.component('bridesmaiden', {
               <div v-for="item in items" class="card" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">{{item.role}}</h5>
-                  <img class="avatar" :src="item.image" />
+                  <div class="avatar" :id="item.id">
+                  </div>
                   <p class="card-text">{{item.name}}</p>
                 </div>
               </div>

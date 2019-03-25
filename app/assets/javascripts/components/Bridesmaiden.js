@@ -38,7 +38,7 @@ Vue.component('bridesmaiden', {
     }
   },
   template: `<div class="wedding-party">
-              <div v-for="item in items" class="card" style="width: 18rem;">
+              <div v-for="item in items" class="card bridesmaid" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">{{item.role}}</h5>
                   <img class="avatar" :src="item.image" />
