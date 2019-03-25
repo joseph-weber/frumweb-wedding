@@ -31,6 +31,8 @@ config/master.key
 
 # Only include if you have production secrets in this file, which is no longer a Rails default
 # config/secrets.yml
+production:
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 
 # dotenv
 # TODO Comment out this rule if environment variables can be committed
