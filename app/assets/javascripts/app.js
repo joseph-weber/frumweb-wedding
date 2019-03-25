@@ -2,32 +2,37 @@
 
 var bus = new Vue();
 
-
-// put in created
-// bus.$on('changeFC', (data)=>{
-//  this.$data.FC = data;
-//})
-
-// put in functions for onclicks
-// bus.$emit('changeFC, something from result, something from result)
-
-
-//
-
-
 $(function () { if ($('#app').length) {
 
   new Vue({
     el: '#app',
     data: {
       hello: 'hello world',
-      page: 'home'
+      page: 'home',
+      dropDown: false,
+      big: true,
+      modal: false
     },
     created: function() {
       this.getMessage();
       bus.$on('changePage', (data)=>{
           this.$data.page = data;
         })
+      bus.$on('hamburgerClick', (data)=>{
+        this.$data.dropDown = !this.$data.dropDown;
+      })
+      bus.$on('tooBig', (result)=>{
+        this.$data.modal = false;
+        this.$data.dropDown = false;
+        this.$data.page = this.$data.page;
+      })
+    },
+    updated: function() {
+      bus.$on('tooBig', (result)=>{
+        this.$data.modal = false;
+        this.$data.dropDown = false;
+        this.$data.page = this.$data.page;
+      })
     },
     methods: {
       getMessage: function() {
@@ -36,11 +41,6 @@ $(function () { if ($('#app').length) {
           timeout: 1000,
           success: (result) => {
             this.$data.hello = result
-            console.log(result)
-            console.log(result)
-            console.log('result')
-            console.log('result')
-            console.log(result)
           },
           error: (error) => {
             console.log(error)
@@ -49,37 +49,79 @@ $(function () { if ($('#app').length) {
       }
     },
     template: `<div>
-                <div class="sticky">
-                  <my-header></my-header>
-                  <nav-bar></nav-bar>
+                  <modal v-show="modal" />
+                <div v-show="!modal" >
+                <div v-show="!dropDown">
+                  <div class="sticky">
+                    <my-header></my-header>
+                    <nav-bar></nav-bar>
+                  </div>
+                  <div class="content">
+                    <couple v-show="page == 'home'"></couple>
+                    <destination v-show="page == 'destination'"></destination>
+                    <div id="wedding-party" style="display: flex; flex-direction: column; text-align: center">
+                      <h1 v-show="page == 'home'">Primary Enablers</h1>
+                      <br/>
+                      <div id="wedding-party">
+                      <groomsmen v-show="page == 'home'"></groomsmen>
+                      <bridesmaiden v-show="page == 'home'"></bridesmaiden>
+                      </div>
+                    </div>
+                    <schedule v-show="page == 'schedule'" />
+                    <carousel v-show="page == 'photos'"></carousel>
+                    <registry v-show="page == 'registry'"></registry>
+                    <accomodations v-show="page == 'accomodations'"></accomodations>
+                    <my-footer></my-footer>
+                  </div>
                 </div>
-                <div class="content">
-                <img v-show="page == 'home'" id="the-couple" src="/assets/the_couple.jpg"/>
-                <p v-show="page == 'home'" id="lorem">Tempor est ad veniam officia adipisicing cupidatat. Officia occaecat aute excepteur pariatur eiusmod sint culpa ullamco commodo exercitation est ad id anim. Consectetur aute ea esse et non. Esse id eu quis exercitation dolor do eiusmod. Non ipsum sunt pariatur cillum eiusmod Lorem. Voluptate elit do nisi sit deserunt Lorem elit qui cupidatat.</p>
-                <destination v-show="page == 'destination'"></destination>
-                <div id="wedding-party">
-                  <groomsmen v-show="page == 'home'"></groomsmen>
-                  <bridesmaiden v-show="page == 'home'"></bridesmaiden>
-                </div>
-                <schedule v-show="page == 'schedule'" />
-                <images-carousel v-show="page == 'photos'"></images-carousel>
-                <registry v-show="page == 'registry'"></registry>
-                <accomodations v-show="page == 'accomodations'"></accomodations>
-                <my-footer></my-footer>
                 </div>
               </div>`
   })
 }});
 
 
-var headerHeight = 350;
+var headerHeight = 320;
 
 $(window).bind('scroll', function () {
 if ($(window).scrollTop() > headerHeight) {
     $('#navigation-bar').removeClass('navbar-top');
     $('#navigation-bar').addClass('navbar-fixed-top');
+    $('#hamburger-div').removeClass('navbar-top');
+    $('#hamburger-div').addClass('navbar-fixed-top');
+    $('#modal-container').removeClass('modal-dialog modal-lg');
+    $('#modal-container').addClass('disappear');
 } else {
     $('#navigation-bar').removeClass('navbar-fixed-top');
     $('#navigation-bar').addClass('navbar-top');
+    $('#hamburger-div').removeClass('navbar-fixed-top');
+    $('#hamburger-div').addClass('navbar-top');
+    $('#modal-container').removeClass('disappear');
+    $('#modal-container').addClass('modal-dialog modal-lg');
 }
 });  
+
+
+
+function checkWidth(init)
+{
+    /*If browser resized, check width again */
+    if ($(window).width() > 500) {
+        $('#navigation-bar').addClass('exper-nav');
+        $('#navigation-bar').removeClass('disappear');
+        $('#hamburger-div').addClass('disappear');
+        $('#hamburger-div').removeClass('hamburger-nav');
+    }
+    else {
+        $('#navigation-bar').removeClass('exper-nav');
+        $('#navigation-bar').addClass('disappear');
+        $('#hamburger-div').removeClass('disappear');
+        $('#hamburger-div').addClass('hamburger-nav');
+    }
+}
+
+$(document).ready(function() {
+    checkWidth(true);
+    $(window).resize(function() {
+        checkWidth(false);
+    });
+});
