@@ -7,7 +7,8 @@ Vue.component('groomsmen', {
         {
           image: './assets/david.jpg',
           role: 'Best Man',
-          name: 'David Weber'
+          name: 'David Weber',
+          id: 'david'
         },
         {
           image: "https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1",
@@ -25,9 +26,10 @@ Vue.component('groomsmen', {
           name: 'Phil Rimmler'
         },
         {
-          image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
+          image: './assets/zach.png',
           role: 'Groomsman',
-          name: 'Zach Frumkin'
+          name: 'Zach Frumkin',
+          id: 'zach'
         },
         {
           image: 'https://pp.userapi.com/6Kf5KNYniYRWlI5HlKBpDIgWe1TIHfYivQgnzg/-jXA4eIpy4E.jpg?ava=1',
@@ -40,9 +42,10 @@ Vue.component('groomsmen', {
   template: `<div class="wedding-party">
               <div v-for="item in items" class="card" style="width: 18rem;">
                 <div class="card-body">
-                  <h5 class="card-title">{{item.role}}</h5>
-                  <img class="avatar" :src="item.image" />
-                  <p class="card-text">{{item.name}}</p>
+                  <h5 class="card-title">{{item.name}}</h5>
+                  <div class="avatar" :id="item.id">
+                  </div>
+                  <p class="card-text">{{item.role}}</p>
                 </div>
               </div>
             </div>`
